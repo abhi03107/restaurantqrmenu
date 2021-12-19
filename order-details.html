@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="favicon.ico" type="image/gif" sizes="16x16">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#FFFFFF">
+    
+    <!--Bootstrap CDN-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+    />
+
+    <!--Font Awesome CDN-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!--Local CSS-->
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!--Bootstrap JS CDN-->
+    <script
+      defer
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-database.js"></script>
+  </head>
+
+  <body>
+    <section class="shopping-section row justify-content-center ">
+      <div
+        class="shopping-items position-relative col-sm-12 col-xs-12 justify-content-center align-items-center"
+      >
+        <div class="banner row p-3 sticky-top">
+          <div
+            class="banner__items col-5 d-flex justify-content-center align-items-center"
+          >
+            ITEM DETAILS
+          </div>
+          <div
+            class="banner__quantity col-3 d-flex justify-content-center align-items-center"
+          >
+            QUANTITY
+          </div>
+          <div
+            class="banner__quantity col-3 d-flex justify-content-center align-items-center"
+          >
+            PRICE
+          </div>
+          <div
+            class="banner__price col-1 d-flex justify-content-center align-items-center"
+          ></div>
+        </div>
+         
+       
+        <!-- <div style="color: red; position: fixed; bottom: 0" class="btn">
+          Down
+        </div> -->
+        <div id="cartordet"></div>
+      </div>
+      
+</section>
+<div class="summary col-md-2 mx-auto p-0 col-sm-12">
+        <div class="order-details p-3">
+          <h5 class="mb-4">Summary</h5>
+          <div class="detail-desc d-flex justify-content-between mb-1">
+            <div class="detail-name">Order Total</div>
+            <div class="order-price" id="ordercard"></div>
+          </div>
+          
+          <div class="detail-desc d-flex justify-content-between mb-1">
+            <div class="detail-name">Promo Code</div>
+            <div class="order-price">NA</div>
+          </div>
+        </div>
+        <div class="checkoutButton">
+          <div class="priceTag" >
+            <span id="ord1"></span>
+          </div>
+          <button class="preorder" onclick="confirmorder()">
+            <p>Checkout</p>
+            
+         </div> 
+      </div>
+
+</body>
+</html>

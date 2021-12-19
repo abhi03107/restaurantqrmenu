@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" href="logo.ico" type="image/gif" sizes="16x16">
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#FFFFFF">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.23.0/firebase.js"></script>
+
+</head>
+<body>
+	
+		<div class="menu-head">
+			<img height="150" width="150" src="logo.png">
+		</div>
+		<div class='toggle' id='switch'>
+			<div class="toggle-desc">VEG</div>
+			<div class="toggle-veg-img"><img src="./img/veg.jpg"></div>
+		    <div class='toggle-text-off'></div>
+		    <div class='glow-comp'></div>
+		    <div class='toggle-button'></div>
+		    <div class='toggle-text-on'>VEG</div>
+		</div>
+		<div class="background">
+		<div class="menu">
+			<div class="menu-class" id="soups">
+				<p>SOUPS</p>
+				<hr>
+			</div>
+			<div class="menu-list">
+				<div class="menu-item">
+					<img src="img/manchow-soup.jpeg">
+					<p class="item-name"><img src="./img/veg.jpg">Manchow Soup <!--&nbsp <i class="fa fa-info-circle" aria-hidden="true" style="font-size:10px"></i>--></p>
+					<p class="item-price">129</p>
+					<p class="item-desc">It is a dark brown soup prepared with various vegetables flavored with soy sauce, salt, garlic, chili peppers and ginger.</p>
+					<button class='add-to-cart' id='addtocart0' onclick="addtocart('Soups','0')">Add To Cart</button>
+					<div class="number" id="number0">
+						<span class="minus" onclick="decfunction('0')">-</span>
+						<input type="text" id="cart-val0" value="1"/>
+						<span class="plus" onclick="incfunction('0')">+</span>
+					</div>
+					<hr>
+				</div>
+				<div class="menu-item">
+					<img src="img/veg-soup.jpeg">
+					<p class="item-name"><img src="./img/veg.jpg"> Veg Soup </p>
+					<p class="item-price">139</p>
+					<p class="item-desc">A liquid dish, typically savoury and made by boiling vegetables in stock or water.</p>
+					<button class='add-to-cart' id='addtocart1' onclick="addtocart('Soups','1')">Add To Cart</button>
+					<div class="number" id="number1">
+						<span class="minus" onclick="decfunction('1')">-</span>
+						<input type="text" id="cart-val1" value="1"/>
+						<span class="plus" onclick="incfunction('1')">+</span>
+					</div>
+					<hr>
+				</div>
+				<div class="menu-item">
+					<img src="img/tomato-soup.jpeg">
+					<p class="item-name" ><img src="./img/veg.jpg"> Tomato Soup With Fried Toast</p>
+					<p class="item-price">149</p>
+					<p class="item-desc">A liquid dish, typically savoury and made by boiling tomatoes with just the right balance of acidity and sweetness.</p>
+					<button class='add-to-cart' id='addtocart2' onclick="addtocart('Soups','2')">Add To Cart</button>
+					<div class="number" id="number2">
+						<span class="minus" onclick="decfunction('2')">-</span>
+						<input type="text" id="cart-val2" value="1"/>
+						<span class="plus" onclick="incfunction('2')">+</span>
+					</div>
+					<hr>
+				</div>
+				<div class="menu-item non">
+					<img src="img/thai-soup.jpeg">
+					<p class="item-name" ><img src="./non-veg.png">Chicken Thai Soup</p>
+					<p class="item-price">159</p> 
+					<p class="item-desc">It is characterised by its distinct hot and sour flavours, with fragrant spices and herbs generously used in the broth. </p>
+					<button class='add-to-cart' id='addtocart3' onclick="addtocart('Soups','3')">Add To Cart</button>
+					<div class="number" id="number3">
+						<span class="minus" onclick="decfunction('3')">-</span>
+						<input type="text" id="cart-val3" value="1"/>
+						<span class="plus" onclick="incfunction('3')">+</span>
+					</div>
+					<hr>
+				</div>
+			</div>
+			<div class="menu-class" id="app">
+				<p>BIRYANI</p><hr>
+			</div>
+			<div class="menu-list">
+				<div class="menu-item">
+					<img src="img/veg-biryani.jpeg">
+					<p class="item-name"><img src="./img/veg.jpg"> Veg Biryani </p>
+					<p class="item-price">159</p>
+					<p class="item-desc">Long-grained rice (like basmati) flavored with fragrant spices such as saffron and layered with vegetables and a thick gravy.</p>
+					<button class='add-to-cart' id='addtocartbiryani0' onclick="addtocart('Biryani','biryani0')">Add To Cart</button>
+					<div class="number" id="numberbiryani0">
+						<span class="minus" onclick="decfunction('biryani0')">-</span>
+						<input type="text" id="cart-valbiryani0" value="1"/>
+						<span class="plus" onclick="incfunction('biryani0')">+</span>
+					</div>
+					<hr>
+				</div>
+				
+				<div class="menu-item non">
+					<img src="img/egg-biryani.jpeg">
+					<p class="item-name"><img src="./img/non-veg.png"> Egg Biryani </p>
+					<p class="item-price">179</p>
+					<p class="item-desc">Long-grained rice (like basmati) flavored with fragrant spices such as saffron and layered with egg and a thick gravy.</p>
+					<button class='add-to-cart' id='addtocartbiryani1' onclick="addtocart('Biryani','biryani1')">Add To Cart</button>
+					<div class="number" id="numberbiryani1">
+						<span class="minus" onclick="decfunction('biryani1')">-</span>
+						<input type="text" id="cart-valbiryani1" value="1"/>
+						<span class="plus" onclick="incfunction('biryani1')">+</span>
+					</div>
+					<hr>
+				</div>
+				<div class="menu-item non">
+					<img src="img/chicken-biryani.jpeg">
+					<p class="item-name"><img src="./img/non-veg.png"> Chicken Biryani </p>
+					<p class="item-price">189</p>
+					<p class="item-desc">Long-grained rice (like basmati) flavored with fragrant spices such as saffron and layered with chicken and a thick gravy.</p>
+					<button class='add-to-cart' id='addtocartbiryani2' onclick="addtocart('Biryani','biryani2')">Add To Cart</button>
+					<div class="number" id="numberbiryani2">
+						<span class="minus" onclick="decfunction('biryani2')">-</span>
+						<input type="text" id="cart-valbiryani2" value="1"/>
+						<span class="plus" onclick="incfunction('biryani2')">+</span>
+					</div>
+				</div>
+			</div>	
+		</div>
+		<div class="container">
+		  <input type="checkbox" id="toggle" />
+		  <label class="button" for="toggle"></label>
+		  <nav class="nav">
+		    <ul>
+		      <a href="#soups" target="_self">Soups</a>
+		      <a href="#app" target="_self">Appetizers</a>
+		      <a href="#main" target="_self">Main Course</a>
+		      <a href="#dessert" target="_self">Desserts</a>
+		      <a href="#bev" target="_self">Beverages</a>
+		    </ul>
+		  </nav>
+		</div>
+	</div>	
+	<a href="review.html"><div class="footer">
+		<!--<div class="foot-menu"><a href="index.html" target="_self"><img src="menu.png"></a></div>
+		<div class="cart"><a href="index.html" target="_self"><img src="scan.png"></a></div>
+		<div class="checkout">
+			
+			<div class="checkoutButton">
+				<a href="order-details.html" target="_self">
+	          	<button class="preorder">
+	            	<p>CHECKOUT</p>
+	          	</button>
+	          	</a>
+         	</div> 
+		</div>-->
+		<div class="cart-items">
+			<div class="cart-items-value">&#8377 531</div>
+			<div class="divider"></div>
+			<div class="cart-items-count">2 items</div>
+		</div>	
+		<div class="confirm-order-button">Place Order <i class="fas fa-shopping-cart"></i></div>
+	</div></a>
+  <script type="text/javascript" src="script.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <!-- <script  src="./script.js"></script> -->
+  <script>
+	// Your web app's Firebase configuration
+		$('#add-to-cart').click(function(e){
+	document.getElementById("number").style.display = "initial";
+	document.getElementById("addtocart").style.display = "none";
+});
+
+	$(document).ready(function() {
+			$('.minus').click(function () {
+				var $input = $(this).parent().find('input');
+				var count = parseInt($input.val()) - 1;
+				if(count<1){
+					count=1;
+					document.getElementById("number").style.display = "none";
+					document.getElementById("addtocart").style.display = "initial";
+				}
+				else
+					count=count;
+				$input.val(count);
+				$input.change();
+				return false;
+			});
+			$('.plus').click(function () {
+				var $input = $(this).parent().find('input');
+				$input.val(parseInt($input.val()) + 1);
+				$input.change();
+				return false;
+			});
+		});
+
+  </script>
+	
+</body>
+</html>
